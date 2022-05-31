@@ -1,4 +1,4 @@
-# Vite tempelate with React, Typescript, ESlint, CommitLint setup
+# Code Editor
 
 ## List of Commands:
 ### Install dependencies - ```yarn```
