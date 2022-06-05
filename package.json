@@ -11,6 +11,9 @@
     "lint": "prettier --write **/*.{tsx,jsx,js,ts}"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.4.5",
+    "@types/node": "^17.0.40",
+    "axios": "^0.27.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.5"
