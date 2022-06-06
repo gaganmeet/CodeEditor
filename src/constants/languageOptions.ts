@@ -1,4 +1,4 @@
-interface LanguageOptions {
+export interface LanguageOptions {
   id: number
   name: string
   label: string

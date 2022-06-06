@@ -5,11 +5,15 @@ import { languageOptions } from './constants/languageOptions'
 import axios, { AxiosRequestConfig } from 'axios'
 import OutputWindow from './components/OutputWindow'
 import LanguageSelector from './components/LanguageSelector'
+import { useRecoilState } from 'recoil'
+import { languageState } from './appContext'
 
 const App: React.FC = () => {
   const baseUrl = import.meta.env.VITE_BASEURL
   const [code, setCode] = useState('')
   const [result, setResult] = useState('')
+  const [language, setLanguage] = useRecoilState(languageState)
+  console.log(language)
 
   const checkStatus = async (token: string) => {
     const options: AxiosRequestConfig = {
@@ -39,7 +43,7 @@ const App: React.FC = () => {
   }
   async function executeCode() {
     const formData = {
-      language_id: 63,
+      language_id: language.id,
       // encode source code in base64
       source_code: btoa(code)
     }
@@ -72,10 +76,10 @@ const App: React.FC = () => {
         <LanguageSelector />
         <Editor
           height="80vh"
-          defaultLanguage="javascript"
+          defaultLanguage={language.value || 'javascript'}
           className="mt-4"
           theme="vs-dark"
-          onChange={(newValue: any) =>
+          onChange={(newValue: string | undefined) =>
             setCode(() => {
               if (newValue) return newValue
               else return ''
