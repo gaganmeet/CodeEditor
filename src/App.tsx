@@ -67,12 +67,13 @@ const App: React.FC = () => {
     console.log('token', token)
   }
   return (
-    <div className="App">
-      <div className="flex flex-col bg-orange-500 items-center justify-center text-3xl h-screen">
+    <div className="m-auto w-4/5">
+      <div className="flex flex-col justify-center h-screen">
         <LanguageSelector />
         <Editor
-          height="90vh"
+          height="80vh"
           defaultLanguage="javascript"
+          className="mt-4"
           theme="vs-dark"
           onChange={(newValue: any) =>
             setCode(() => {
@@ -82,7 +83,13 @@ const App: React.FC = () => {
           }
           defaultValue="// some comment"
         />
-        <button onClick={executeCode}>Execute</button>
+        <button
+          type="button"
+          className="btn btn-success w-32 m-4"
+          onClick={executeCode}
+        >
+          Execute
+        </button>
         <OutputWindow outputDetails={result} />
       </div>
     </div>
