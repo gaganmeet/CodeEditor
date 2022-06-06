@@ -4,6 +4,7 @@ import Editor from '@monaco-editor/react'
 import { languageOptions } from './constants/languageOptions'
 import axios, { AxiosRequestConfig } from 'axios'
 import OutputWindow from './components/OutputWindow'
+import LanguageSelector from './components/LanguageSelector'
 
 const App: React.FC = () => {
   const baseUrl = import.meta.env.VITE_BASEURL
@@ -67,12 +68,13 @@ const App: React.FC = () => {
   }
   return (
     <div className="App">
-      <div className="flex items-center justify-center text-3xl h-screen">
+      <div className="flex flex-col bg-orange-500 items-center justify-center text-3xl h-screen">
+        <LanguageSelector />
         <Editor
           height="90vh"
           defaultLanguage="javascript"
           theme="vs-dark"
-          onChange={(newValue) =>
+          onChange={(newValue: any) =>
             setCode(() => {
               if (newValue) return newValue
               else return ''
