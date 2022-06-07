@@ -70,6 +70,7 @@ const App: React.FC = () => {
     checkStatus(token)
     console.log('token', token)
   }
+  console.log('My first push')
   return (
     <div className="m-auto w-4/5">
       <div className="flex flex-col justify-center h-screen">
