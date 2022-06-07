@@ -4,10 +4,12 @@ import './index.css'
 import App from './App'
 import { RecoilRoot } from 'recoil'
 import DebugObserver from './DebugObserver'
+import RecoilNexus from 'recoil-nexus'
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
+      <RecoilNexus />
       <DebugObserver />
       <App />
     </RecoilRoot>
