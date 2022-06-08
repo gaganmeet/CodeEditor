@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import Editor from '@monaco-editor/react'
 import { useRecoilValue, useRecoilState } from 'recoil'
-import { languageState, codeState } from '../appContext'
+import { languageState, codeState, loadingState } from '../appContext'
 import { executeCode } from '../utils/executeCode'
 
 const CodeEditor = () => {
   const [code, setCode] = useRecoilState(codeState)
+
   const language = useRecoilValue(languageState)
+  const loading = useRecoilValue(loadingState)
+
   function handleExecuteCode() {
     executeCode(code, language.id)
   }
@@ -23,14 +26,14 @@ const CodeEditor = () => {
             else return ''
           })
         }
-        defaultValue="// some comment"
+        defaultValue={code}
       />
       <button
         type="button"
-        className="btn btn-success w-32 m-4"
+        className={`btn btn-success m-4 ${loading ? 'loading w-36' : 'w-32'}`}
         onClick={handleExecuteCode}
       >
-        Execute
+        {loading ? 'Executing' : 'Execute'}
       </button>
     </>
   )

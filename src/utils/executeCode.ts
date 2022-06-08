@@ -1,7 +1,10 @@
 import axios from 'axios'
 import { checkStatus } from './checkStatus'
+import { loadingState } from '../appContext'
+import { setRecoil } from 'recoil-nexus'
 
 export async function executeCode(code: string, languageId: number) {
+  setRecoil(loadingState,true)
   const formData = {
     language_id: languageId,
     // encode source code in base64
@@ -30,5 +33,9 @@ export async function executeCode(code: string, languageId: number) {
   console.log('token', token)
   const data = await checkStatus(token)
   console.log('data', data)
+  // if(data){
+  //   setRecoil(loadingState,false)
+  // }
+  
   return data
 }
