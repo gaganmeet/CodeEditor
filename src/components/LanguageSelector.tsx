@@ -20,9 +20,6 @@ const LanguageSelector = () => {
         className="select select-bordered"
         onChange={handleLanguageChange}
       >
-        <option disabled selected>
-          Select Language
-        </option>
         {languageOptions.map((option) => (
           <option key={option.id} value={option.id}>
             {option.name}

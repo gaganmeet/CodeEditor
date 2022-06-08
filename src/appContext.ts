@@ -11,7 +11,11 @@ export const resultState = atom<string>({
   default: ''
 })
 
+export const loadingState = atom<boolean>({
+  key: 'loading',
+  default: false
+})
 export const codeState = atom<string>({
   key: 'code',
-  default: ''
+  default: ""
 })
