@@ -24,7 +24,7 @@ export const checkStatus = async (token: string) => {
       setRecoil(loadingState,false)
     }
   } catch (err) {
-    console.log('err', err)
+    console.error('err', err)
     setRecoil(loadingState,false)
   }
 }

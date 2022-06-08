@@ -32,10 +32,6 @@ export async function executeCode(code: string, languageId: number) {
   // const res = await getResult()
   console.log('token', token)
   const data = await checkStatus(token)
-  console.log('data', data)
-  // if(data){
-  //   setRecoil(loadingState,false)
-  // }
-  
+  console.log('data', data)  
   return data
 }
