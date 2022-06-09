@@ -39,6 +39,7 @@ const CodeEditor = () => {
         defaultLanguage={language.value || 'javascript'}
         className="mt-4"
         options={options}
+        language={language.value || 'javascript'}
         theme="vs-dark"
         value="// Write your code here"
         onChange={(newValue: string | undefined) =>
