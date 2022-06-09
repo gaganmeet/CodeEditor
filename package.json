@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3333 --host",
     "build": "tsc && vite build",
-    "serve": "vite preview --port 3000",
+    "serve": "vite preview --port 3333",
     "eject": "react-scripts eject",
     "postinstall": "husky install",
     "lint": "prettier --write **/*.{tsx,jsx,js,ts}"
