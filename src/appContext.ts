@@ -17,5 +17,5 @@ export const loadingState = atom<boolean>({
 })
 export const codeState = atom<string>({
   key: 'code',
-  default: ""
+  default: ''
 })

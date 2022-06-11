@@ -10,7 +10,7 @@ const App: React.FC = () => {
   const result = useRecoilValue(resultState)
   return (
     <div className="m-auto w-4/5">
-      <div className="flex flex-col justify-center h-screen">
+      <div className="flex h-screen flex-col justify-center">
         <LanguageSelector />
         <CodeEditor />
         <OutputWindow outputDetails={result} />
