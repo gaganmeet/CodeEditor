@@ -1,12 +1,13 @@
 import './App.css'
-import { useState } from 'react'
 import OutputWindow from './components/OutputWindow'
 import LanguageSelector from './components/LanguageSelector'
 import { useRecoilValue } from 'recoil'
-import { codeState, resultState } from './appContext'
+import { resultState } from './appContext'
+import axios from 'axios'
 import CodeEditor from './components/Editor'
 
 const App: React.FC = () => {
+  axios.defaults.headers['X-RapidAPI-Key'] = import.meta.env.VITE_APIKEY
   const result = useRecoilValue(resultState)
   return (
     <div className="m-auto w-4/5">

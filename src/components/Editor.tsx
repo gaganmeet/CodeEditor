@@ -1,17 +1,16 @@
 import React, { useState } from 'react'
 import Editor from '@monaco-editor/react'
 import { useRecoilValue, useRecoilState } from 'recoil'
-import { languageState, codeState, loadingState } from '../appContext'
+import { languageState, loadingState } from '../appContext'
 import { executeCode } from '../utils/executeCode'
 
 const CodeEditor = () => {
-  const [code, setCode] = useRecoilState(codeState)
+  const [code, setCode] = useState<string>('')
   const [fontSize, setFontSize] = useState('14')
 
   const language = useRecoilValue(languageState)
   const loading = useRecoilValue(loadingState)
   const options = { fontSize: fontSize + 'px' }
-
   function handleExecuteCode() {
     executeCode(code, language.id)
   }
