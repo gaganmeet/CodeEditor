@@ -17,7 +17,7 @@ const CodeEditor = () => {
   return (
     <>
       <div
-        className="flex flex-col tooltip tooltip-bottom z-10 w-1/3  place-items-start ml-2"
+        className="tooltip tooltip-bottom z-10 ml-2 flex w-1/3  flex-col place-items-start"
         data-tip={fontSize}
       >
         <label htmlFor="fontSize">Font Size :</label>

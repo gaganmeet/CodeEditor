@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios'
-import { resultState,loadingState } from '../appContext'
+import { resultState, loadingState } from '../appContext'
 import { setRecoil } from 'recoil-nexus'
 
 export const checkStatus = async (token: string) => {
@@ -21,10 +21,10 @@ export const checkStatus = async (token: string) => {
       return
     } else {
       setRecoil(resultState, response.data)
-      setRecoil(loadingState,false)
+      setRecoil(loadingState, false)
     }
   } catch (err) {
     console.error('err', err)
-    setRecoil(loadingState,false)
+    setRecoil(loadingState, false)
   }
 }

@@ -11,7 +11,7 @@ const LanguageSelector = () => {
     if (language) setLanguage(language)
   }
   return (
-    <div className="form-control w-full max-w-xs ml-8">
+    <div className="form-control ml-8 w-full max-w-xs">
       <label className="label">
         <span className="label-text">Programming language</span>
       </label>
